@@ -1,0 +1,22 @@
+.gradient-btn-1 {
+  background-image: linear-gradient(
+    to right,
+    $color-orange-light,
+    $color-orange-dark
+  );
+  font-size: 1.4rem;
+  color: $color-white;
+  padding: 1.3rem 3.3rem;
+  font-family: $font-body;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 0px;
+  text-decoration: none !important;
+  margin-top: 1.5rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+
+  &:hover {
+    color: $color-white;
+  }
+}

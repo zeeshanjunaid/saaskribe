@@ -1,0 +1,20 @@
+.hero {
+  height: 90vh;
+  background-size: 60% !important;
+  background-position: right top !important;
+  .container,
+  .row {
+    height: 100%;
+  }
+  h2 {
+    font-weight: 500;
+    font-family: $font-body;
+    font-size: 4.8rem;
+    color: $color-blue-dark;
+  }
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-blue-light;
+  }
+}

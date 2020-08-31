@@ -1,0 +1,27 @@
+//COLORS
+$color-blue-dark: #1d2b4c;
+$color-blue-light: #5b6a87;
+$color-sky-dark: #108cf6;
+$color-sky-light: #75d4fc;
+$color-orange-dark: #ff6655;
+$color-orange-light: #ff8d7f;
+$color-white: #ffffff;
+
+//FONTS
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&display=swap");
+@font-face {
+  font-family: "Myriad Pro Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Regular"),
+    url("../fonts/MYRIADPRO-REGULAR.woff") format("woff");
+}
+@font-face {
+  font-family: "Myriad Pro Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Bold"),
+    url("../fonts/MYRIADPRO-BOLD.woff") format("woff");
+}
+$font-body: "Myriad Pro Regular";
+$font-heading: "Frank Ruhl Libre", serif;
