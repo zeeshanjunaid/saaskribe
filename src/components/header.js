@@ -2,9 +2,21 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { Container, Row, Col, Navbar, NavbarBrand, Nav } from "react-bootstrap"
-import Logo from "../images/saaskribe_logo.png"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Header = () => {
+  const Images = useStaticQuery(graphql`
+    query {
+      Logo: file(relativePath: { eq: "saaskribe_logo.png" }) {
+        childImageSharp {
+          fixed(width: 135) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
   const [scrolling, setScrolling] = useState(false)
 
   useEffect(() => {
@@ -25,7 +37,7 @@ const Header = () => {
           <Col lg={12}>
             <Navbar collapseOnSelect expand="lg">
               <NavbarBrand className="logo" tag={Link} to={"/"}>
-                <img alt="logo" src={Logo} />
+                <Img alt="logo" fixed={Images.Logo.childImageSharp.fixed} />
               </NavbarBrand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse
