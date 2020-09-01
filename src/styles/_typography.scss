@@ -20,3 +20,21 @@
     color: $color-white;
   }
 }
+.btn-dark-blue {
+  background-color: $color-blue-dark;
+  font-size: 1.4rem;
+  color: $color-white;
+  padding: 1rem 2rem;
+  font-family: $font-body;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 0px;
+  text-decoration: none !important;
+  display: inline-block;
+  border-radius: 0.3rem;
+  margin-left: 2rem;
+
+  &:hover {
+    color: $color-white;
+  }
+}
