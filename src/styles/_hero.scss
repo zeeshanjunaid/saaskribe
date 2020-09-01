@@ -2,9 +2,25 @@
   height: 90vh;
   background-size: 60% !important;
   background-position: right top !important;
+  @media (max-width: 767px) {
+    padding: 6rem 0;
+  }
   .container,
   .row {
     height: 100%;
+  }
+  &__img-container {
+    img {
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      order: -1;
+    }
+  }
+  &__text-container {
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   h2 {
     font-weight: 700;

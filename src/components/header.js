@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { Container, Row, Col, Navbar, NavbarBrand, Nav } from "react-bootstrap"
+import { Row, Col, Navbar, NavbarBrand, Nav, Container } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { CgMenuCheese } from "react-icons/cg"
+import { FaTimes } from "react-icons/fa"
 
 const Header = () => {
   const Images = useStaticQuery(graphql`
@@ -18,6 +20,7 @@ const Header = () => {
     }
   `)
   const [scrolling, setScrolling] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,18 +37,21 @@ const Header = () => {
     <div id="header" className={`navbar-area ${scrolling && "sticky"}`}>
       <Container>
         <Row>
-          <Col lg={12}>
-            <Navbar collapseOnSelect expand="lg">
+          <Col lg xs>
+            <Navbar expand="md">
               <NavbarBrand className="logo" tag={Link} to={"/"}>
                 <Img alt="logo" fixed={Images.Logo.childImageSharp.fixed} />
               </NavbarBrand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse
-                id="responsive-navbar-nav"
-                className="sub-menu-bar"
+              <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
+                <CgMenuCheese />
+              </div>
+              <Navbar
+                className={`sub-menu-bar ${menuOpen && "showMenu"}`}
                 navbar
               >
-                <Nav className="mr-auto"></Nav>
+                <div onClick={() => setMenuOpen(false)} className="cross-icon">
+                  <FaTimes />
+                </div>
                 <Nav>
                   <Nav.Link to="/">for saasers</Nav.Link>
                   <Nav.Link to="/">pricing</Nav.Link>
@@ -54,7 +60,7 @@ const Header = () => {
                 <Link to="/" className="btn-dark-blue">
                   Request Demo
                 </Link>
-              </Navbar.Collapse>
+              </Navbar>
             </Navbar>
           </Col>
         </Row>

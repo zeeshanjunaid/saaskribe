@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
@@ -10,14 +10,14 @@ const Hero = () => {
     query {
       heroImage: file(relativePath: { eq: "top-imag.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 350) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       heroBg: file(relativePath: { eq: "top-background.png" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
+          fluid(quality: 90, maxWidth: 920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -32,7 +32,7 @@ const Hero = () => {
     >
       <Container>
         <Row className="align-items-center">
-          <Col md={5} sm={12}>
+          <Col xs={12} md sm={12} lg className="hero__text-container">
             <h2>The renewal solution for SaaS Companies</h2>
             <p>
               Fully Support your Renewal, Forecasting, Investor, and
@@ -42,7 +42,7 @@ const Hero = () => {
               Pricing and plans
             </Link>
           </Col>
-          <Col md={6} sm={12}>
+          <Col xm={12} md sm={12} lg className="hero__img-container">
             <Img fluid={HeroImages.heroImage.childImageSharp.fluid} />
           </Col>
         </Row>
