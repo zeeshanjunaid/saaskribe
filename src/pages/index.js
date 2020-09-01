@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import Hero from "../components/Home/hero"
 import About from "../components/Home/about"
 import TwoCol from "../components/Home/twoCol"
-import Logos from "../components/Home/Logos"
+import Logos from "../components/Home/logos"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
