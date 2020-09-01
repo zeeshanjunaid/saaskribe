@@ -1,0 +1,23 @@
+.about,
+.twoCol {
+  padding: 6rem 0;
+}
+.twoCol {
+  &__heading {
+    font-size: 3.2rem;
+    font-family: $font-heading;
+    margin-right: 5rem;
+    font-weight: bold;
+    color: $color-blue-dark;
+  }
+  &__paragraph {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-right: 5rem;
+    line-height: 1.2;
+    font-family: $font-heading;
+    font-weight: 400;
+    color: $color-blue-light;
+    font-family: $font-body;
+  }
+}

@@ -39,3 +39,13 @@
     color: $color-white;
   }
 }
+
+h2.main-heading {
+  font-weight: 700;
+  font-family: $font-heading;
+  font-size: 4.8rem;
+  line-height: 1.2;
+  color: $color-blue-dark;
+  text-align: center;
+  margin-bottom: 2rem;
+}
