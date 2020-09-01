@@ -31,7 +31,7 @@ const IndexPage = () => {
         edges {
           node {
             logo {
-              fluid(toFormat: WEBP) {
+              fluid (toFormat: WEBP){
                 ...GatsbyContentfulFluid
               }
             }
@@ -64,7 +64,7 @@ const IndexPage = () => {
             />
           ))}
         </Container>
-        {/* <Logos logos={data.allContentfulClientsLogos.edges} /> */}
+        <Logos logos={data.allContentfulClientsLogos.edges} />
       </div>
     </Layout>
   )
