@@ -64,7 +64,7 @@ const IndexPage = () => {
             />
           ))}
         </Container>
-        <Logos logos={data.allContentfulClientsLogos.edges} />
+        {/* <Logos logos={data.allContentfulClientsLogos.edges} /> */}
       </div>
     </Layout>
   )
