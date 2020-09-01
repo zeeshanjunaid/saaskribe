@@ -1,8 +1,14 @@
 .about,
-.twoCol {
+.twoCol,
+.logos {
   padding: 6rem 0;
 }
 .twoCol {
+  .reverse_row {
+    .twoCol__image {
+      float: left;
+    }
+  }
   &__heading {
     font-size: 3.2rem;
     font-family: $font-heading;
@@ -19,5 +25,13 @@
     font-weight: 400;
     color: $color-blue-light;
     font-family: $font-body;
+  }
+  &__image {
+    width: 85%;
+    float: right;
+    box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    overflow: visible;
   }
 }

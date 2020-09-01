@@ -7,21 +7,34 @@ import SEO from "../components/seo"
 import Hero from "../components/Home/hero"
 import About from "../components/Home/about"
 import TwoCol from "../components/Home/twoCol"
+import Logos from "../components/Home/Logos"
 
 const IndexPage = () => {
-  const ColImages = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      image1: file(relativePath: { eq: "content_img2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 350) {
-            ...GatsbyImageSharpFluid
+      allContentfulTwoCols(sort: { fields: createdAt, order: ASC }) {
+        edges {
+          node {
+            id
+            heading
+            paragraph
+            reverse
+            image {
+              fluid(maxWidth: 350, toFormat: WEBP) {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
-      image2: file(relativePath: { eq: "content_img3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 350) {
-            ...GatsbyImageSharpFluid
+      allContentfulClientsLogos {
+        edges {
+          node {
+            logo {
+              fluid(toFormat: WEBP) {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
@@ -41,20 +54,17 @@ const IndexPage = () => {
               </h2>
             </Col>
           </Row>
-          <TwoCol
-            heading="Take the admin work out of your renewal process, focus on Customer Retention "
-            paragraph="Automate the subscription renewal process and track renewal
-      notifications and confirmations"
-            imageLink={ColImages.image1.childImageSharp.fluid}
-            reverse={false}
-          />
-          <TwoCol
-            heading="Manage all of your subscription renewals from a single dashboard"
-            paragraph="A full suite of subscription management tools at your fingertips, all with real time reporting."
-            imageLink={ColImages.image2.childImageSharp.fluid}
-            reverse={true}
-          />
+          {data.allContentfulTwoCols.edges.map(item => (
+            <TwoCol
+              key={item.node.id}
+              heading={item.node.heading}
+              paragraph={item.node.paragraph}
+              imageLink={item.node.image.fluid}
+              reverse={item.node.reverse}
+            />
+          ))}
         </Container>
+        <Logos logos={data.allContentfulClientsLogos.edges} />
       </div>
     </Layout>
   )

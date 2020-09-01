@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 const TwoCol = ({ heading, paragraph, imageLink, reverse }) => {
   if (reverse) {
     return (
-      <Row className="align-items-center mt-5 mb-5">
+      <Row className="align-items-center mt-5 mb-5 reverse_row">
         <Col>
           <Img className="twoCol__image" fluid={imageLink} />
         </Col>
