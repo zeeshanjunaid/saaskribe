@@ -17,7 +17,7 @@ const Hero = () => {
       }
       heroBg: file(relativePath: { eq: "top-background.png" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 920) {
+          fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
