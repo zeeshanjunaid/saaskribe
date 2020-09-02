@@ -1,13 +1,13 @@
 .footer {
   background-color: $color-blue-dark;
   padding: 8rem 0;
-  .main-heading {
-    color: $color-white;
-    font-size: 3.2rem;
-    padding: 0 2rem;
-    line-height: 1.4;
-  }
-  .gradient-btn-2 {
-    margin-top: 2rem !important;
+  .col-top {
+    text-align: center;
+    .main-heading {
+      color: $color-white;
+      font-size: 3.2rem;
+      padding: 0 2rem;
+      line-height: 1.4;
+    }
   }
 }
