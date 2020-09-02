@@ -37,7 +37,7 @@ const Header = () => {
     <div id="header" className={`navbar-area ${scrolling && "sticky"}`}>
       <Container>
         <Row>
-          <Col lg xs>
+          <Col>
             <Navbar expand="md">
               <NavbarBrand className="logo" tag={Link} to={"/"}>
                 <Img alt="logo" fixed={Images.Logo.childImageSharp.fixed} />

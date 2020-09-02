@@ -32,7 +32,7 @@ const Hero = () => {
     >
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md sm={12} lg className="hero__text-container">
+          <Col md sm={12} className="hero__text-container">
             <h2>The renewal solution for SaaS Companies</h2>
             <p>
               Fully Support your Renewal, Forecasting, Investor, and
@@ -42,7 +42,7 @@ const Hero = () => {
               Pricing and plans
             </Link>
           </Col>
-          <Col xm={12} md sm={12} lg className="hero__img-container">
+          <Col md sm={12}className="hero__img-container">
             <Img fluid={HeroImages.heroImage.childImageSharp.fluid} />
           </Col>
         </Row>

@@ -21,7 +21,7 @@ const Footer = () => {
     <div className="footer">
       <Container>
         <Row className="align-items-center justify-content-center">
-          <Col className="col-top" lg={8}>
+          <Col className="col-top" md={8} sm>
             <h2 className="main-heading">
               Supporting over 50 thousand subscriptions globally, and counting
             </h2>

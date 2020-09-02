@@ -6,10 +6,10 @@ const TwoCol = ({ heading, paragraph, imageLink, reverse }) => {
   if (reverse) {
     return (
       <Row className="align-items-center mt-5 mb-5 reverse_row">
-        <Col sm={12} lg md>
+        <Col sm={12} md>
           <Img className="twoCol__image" fluid={imageLink} />
         </Col>
-        <Col sm={12} lg md className="reverse_column">
+        <Col sm={12} md className="reverse_column">
           <h3 className="twoCol__heading">{heading}</h3>
           <p className="twoCol__paragraph">{paragraph}</p>
         </Col>
@@ -18,11 +18,11 @@ const TwoCol = ({ heading, paragraph, imageLink, reverse }) => {
   } else {
     return (
       <Row className="align-items-center mt-5 mb-5">
-        <Col sm={12} lg md>
+        <Col sm={12} md>
           <h3 className="twoCol__heading">{heading}</h3>
           <p className="twoCol__paragraph">{paragraph}</p>
         </Col>
-        <Col sm={12} lg md>
+        <Col sm={12} md>
           <Img className="twoCol__image" fluid={imageLink} />
         </Col>
       </Row>
