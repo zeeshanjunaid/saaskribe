@@ -2,13 +2,13 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import Img from "gatsby-image"
 
-const Logos = ({ logos }) => {
+const Logos = ({ logos, title }) => {
   return (
     <div className="logos">
       <Container>
         <Row>
           <Col>
-            <h2 className="main-heading">Our Clients</h2>
+            <h2 className="main-heading">{title}</h2>
           </Col>
         </Row>
         <Row>

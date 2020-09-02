@@ -49,6 +49,20 @@ const IndexPage = () => {
           }
         }
       }
+      contentfulAboutSection(sectionId: { eq: 1 }) {
+        title
+        sectionimage {
+          fluid(toFormat: WEBP) {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+      TwoColumnTitle: contentfulHeading(sectionName: { eq: "TwoColumnTitle" }) {
+        title
+      }
+      ClientsTitle: contentfulHeading(sectionName: { eq: "ClientsTitle" }) {
+        title
+      }
     }
   `)
   return (
@@ -60,14 +74,15 @@ const IndexPage = () => {
         heroImage={data.contentfulHeroSection.heroImage.fluid}
         buttonText={data.contentfulHeroSection.buttonText}
       />
-      <About />
+      <About
+        title={data.contentfulAboutSection.title}
+        sectionImage={data.contentfulAboutSection.sectionimage.fluid}
+      />
       <div className="twoCol">
         <Container>
           <Row className="justify-content-center">
             <Col lg={10}>
-              <h2 className="main-heading">
-                Everything You Need to Scale and Protect your Recurring Revenue
-              </h2>
+              <h2 className="main-heading">{data.TwoColumnTitle.title}</h2>
             </Col>
           </Row>
           {data.allContentfulTwoCols.edges.map(item => (
@@ -80,7 +95,10 @@ const IndexPage = () => {
             />
           ))}
         </Container>
-        <Logos logos={data.allContentfulClientsLogos.edges} />
+        <Logos
+          title={data.ClientsTitle.title}
+          logos={data.allContentfulClientsLogos.edges}
+        />
       </div>
     </Layout>
   )
