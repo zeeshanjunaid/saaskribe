@@ -23,5 +23,5 @@ $color-white: #ffffff;
   src: local("Myriad Pro Bold"),
     url("../fonts/MYRIADPRO-BOLD.woff") format("woff");
 }
-$font-body: "Myriad Pro Regular";
+$font-body: "Myriad Pro Regular", sans-serif;
 $font-heading: "Frank Ruhl Libre", serif;
