@@ -19,13 +19,13 @@ const About = () => {
     <div className="about">
       <Container>
         <Row className="justify-content-center">
-          <Col lg={10} sm>
+          <Col md={10} sm>
             <h2 className="main-heading">
               The Fastest Growing SaaS Companies in the world trust SaaSKribe to
               manage and renew their subscriptions
             </h2>
           </Col>
-          <Col lg={10} sm>
+          <Col md={10} sm>
             <Img fluid={data.Image.childImageSharp.fluid} />
           </Col>
         </Row>
