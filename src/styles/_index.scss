@@ -3,10 +3,24 @@
 .logos {
   padding: 6rem 0;
 }
+.about {
+  .gatsby-image-wrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
 .twoCol {
   .reverse_row {
     .twoCol__image {
-      float: left;
+      @media (min-width: 767px) {
+        float: left;
+      }
+    }
+
+    .reverse_column {
+      @media (max-width: 767px) {
+        order: -1;
+      }
     }
   }
   &__heading {
@@ -15,6 +29,11 @@
     margin-right: 5rem;
     font-weight: bold;
     color: $color-blue-dark;
+    @media (max-width: 767px) {
+      margin-right: 0;
+      text-align: center;
+      margin-top: 5rem;
+    }
   }
   &__paragraph {
     font-size: 2rem;
@@ -25,13 +44,25 @@
     font-weight: 400;
     color: $color-blue-light;
     font-family: $font-body;
+    @media (max-width: 767px) {
+      margin-right: 0;
+      text-align: center;
+      font-size: 2.4rem;
+      margin-top: 2rem;
+    }
   }
   &__image {
     width: 85%;
-    float: right;
     box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-out 0s;
     position: relative;
     overflow: visible;
+    @media (min-width: 767px) {
+      float: right;
+    }
+    @media (max-width: 767px) {
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
   }
 }
