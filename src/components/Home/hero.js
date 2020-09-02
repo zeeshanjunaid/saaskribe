@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
-const Hero = () => {
+const Hero = ({ title, paragraph, buttonText, heroImage }) => {
   const HeroImages = useStaticQuery(graphql`
     query {
       heroImage: file(relativePath: { eq: "top-imag.png" }) {
@@ -33,17 +33,14 @@ const Hero = () => {
       <Container>
         <Row className="align-items-center">
           <Col md sm={12} className="hero__text-container">
-            <h2>The renewal solution for SaaS Companies</h2>
-            <p>
-              Fully Support your Renewal, Forecasting, Investor, and
-              Subscription needs, from a Single Platform
-            </p>
+            <h2>{title}</h2>
+            <p>{paragraph}</p>
             <Link to="/" className="gradient-btn-1">
-              Pricing and plans
+              {buttonText}
             </Link>
           </Col>
-          <Col md sm={12}className="hero__img-container">
-            <Img fluid={HeroImages.heroImage.childImageSharp.fluid} />
+          <Col md sm={12} className="hero__img-container">
+            <Img fluid={heroImage} />
           </Col>
         </Row>
       </Container>

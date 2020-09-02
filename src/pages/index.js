@@ -31,10 +31,21 @@ const IndexPage = () => {
         edges {
           node {
             logo {
-              fluid (toFormat: WEBP){
+              fluid(toFormat: WEBP) {
                 ...GatsbyContentfulFluid
               }
             }
+          }
+        }
+      }
+      contentfulHeroSection(sectionid: { eq: 1 }) {
+        buttonText
+        paragraph
+        sectionid
+        title
+        heroImage {
+          fluid(toFormat: WEBP) {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -43,7 +54,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero />
+      <Hero
+        title={data.contentfulHeroSection.title}
+        paragraph={data.contentfulHeroSection.paragraph}
+        heroImage={data.contentfulHeroSection.heroImage.fluid}
+        buttonText={data.contentfulHeroSection.buttonText}
+      />
       <About />
       <div className="twoCol">
         <Container>
