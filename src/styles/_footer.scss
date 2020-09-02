@@ -1,6 +1,6 @@
 .footer {
   background-color: $color-blue-dark;
-  padding: 8rem 0;
+  padding: 6.7rem 0;
   .col-top {
     text-align: center;
     .main-heading {
@@ -8,6 +8,54 @@
       font-size: 3.2rem;
       padding: 0 2rem;
       line-height: 1.4;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 8rem;
+    padding-top: 5.6rem;
+    border-top: 0.1rem solid rgba($color-white, 0.1);
+    &__logo {
+      max-width: 13.6rem;
+    }
+    .copyright {
+      font-size: 1.4rem;
+      color: $color-blue-light;
+      margin-top: 2rem;
+    }
+    &__social-icons {
+      justify-content: flex-end;
+      display: flex;
+      a {
+        svg {
+          font-size: 2.4rem;
+        }
+      }
+      a:not(last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+    &__menu {
+      margin-top: 2rem;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        a {
+          font-size: 1.4rem;
+          color: $color-blue-light;
+          text-decoration: none;
+          font-weight: 500;
+        }
+        li:not(last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+    &__right {
+      align-items: flex-end;
+      justify-content: flex-end;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

@@ -1,8 +1,22 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      footerLogo: file(relativePath: { eq: "saaskribe_flogo.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <div className="footer">
       <Container>
@@ -16,6 +30,43 @@ const Footer = () => {
             </Link>
           </Col>
         </Row>
+        <div className="footer-bottom">
+          <Row>
+            <Col>
+              <Img
+                className="footer-bottom__logo"
+                fluid={data.footerLogo.childImageSharp.fluid}
+              />
+              <p className="copyright">© 2020 SassKribe, all rights reserved</p>
+            </Col>
+            <Col className="footer-bottom__right">
+              <div className="footer-bottom__social-icons">
+                <a href="#" target="_blank">
+                  <FaFacebookF />
+                </a>
+                <a href="#" target="_blank">
+                  <FaTwitter />
+                </a>
+                <a href="#" target="_blank">
+                  <FaInstagram />
+                </a>
+              </div>
+              <div className="footer-bottom__menu">
+                <ul>
+                  <li>
+                    <Link to="/">For Saasers</Link>
+                  </li>
+                  <li>
+                    <Link to="/">For Saasers</Link>
+                  </li>
+                  <li>
+                    <Link to="/">For Saasers</Link>
+                  </li>
+                </ul>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </div>
   )
