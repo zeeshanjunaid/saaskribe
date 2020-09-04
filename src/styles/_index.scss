@@ -5,7 +5,7 @@
 }
 .about {
   .gatsby-image-wrapper {
-    width: 85%;
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -13,7 +13,8 @@
   .reverse_row {
     .twoCol__image {
       @media (min-width: 767px) {
-        float: left;
+        // float: left;
+        margin: 0 auto;
       }
     }
 
@@ -25,12 +26,10 @@
   }
   &__heading {
     font-size: 3.2rem;
-    font-family: $font-heading;
-    margin-right: 5rem;
+    // margin-right: 5rem;
     font-weight: bold;
     color: $color-blue-dark;
     @media (max-width: 767px) {
-      margin-right: 0;
       text-align: center;
       margin-top: 5rem;
     }
@@ -52,13 +51,14 @@
     }
   }
   &__image {
-    width: 85%;
+    width: 80%;
     box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-out 0s;
     position: relative;
     overflow: visible;
     @media (min-width: 767px) {
-      float: right;
+      // float: right;
+      margin: 0 auto;
     }
     @media (max-width: 767px) {
       margin: 0 auto;

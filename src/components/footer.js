@@ -3,15 +3,21 @@ import { Container, Row, Col } from "react-bootstrap"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      footerLogo: file(relativePath: { eq: "saaskribe_flogo.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+      footerContent: contentfulFooterContent(
+        id: { eq: "8e156a76-0188-545b-b161-df5652d66c0f" }
+      ) {
+        id
+        buttonText
+        copyrightText
+        heading
+        logo {
+          fluid(sizes: "350", toFormat: WEBP) {
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -22,11 +28,9 @@ const Footer = () => {
       <Container>
         <Row className="align-items-center justify-content-center">
           <Col className="col-top" md={8} sm>
-            <h2 className="main-heading">
-              Supporting over 50 thousand subscriptions globally, and counting
-            </h2>
+            <h2 className="main-heading">{data.footerContent.heading}</h2>
             <Link className="gradient-btn-2" to="/">
-              get started
+              {data.footerContent.buttonText}
             </Link>
           </Col>
         </Row>
@@ -35,9 +39,9 @@ const Footer = () => {
             <Col>
               <Img
                 className="footer-bottom__logo"
-                fluid={data.footerLogo.childImageSharp.fluid}
+                fluid={data.footerContent.logo.fluid}
               />
-              <p className="copyright">© 2020 SassKribe, all rights reserved</p>
+              <p className="copyright">{data.footerContent.copyrightText}</p>
             </Col>
             <Col className="footer-bottom__right">
               <div className="footer-bottom__social-icons">
@@ -48,7 +52,7 @@ const Footer = () => {
                   <FaTwitter />
                 </a>
                 <a href="#" target="_blank">
-                  <FaInstagram />
+                  <FaLinkedinIn />
                 </a>
               </div>
               <div className="footer-bottom__menu">

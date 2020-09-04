@@ -8,7 +8,7 @@ const About = ({ title, sectionImage }) => {
     <div className="about">
       <Container>
         <Row className="justify-content-center">
-          <Col md={10} sm>
+          <Col sm>
             <h2 className="main-heading">{title}</h2>
           </Col>
           <Col md={10} sm>
