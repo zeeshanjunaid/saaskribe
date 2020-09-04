@@ -8,12 +8,18 @@ import { CgMenuCheese } from "react-icons/cg"
 import { FaTimes } from "react-icons/fa"
 
 const Header = () => {
-  const Images = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      Logo: file(relativePath: { eq: "saaskribe_logo.png" }) {
-        childImageSharp {
+      headerContent: contentfulHeader(
+        id: { eq: "bd4009d2-c1ff-5e7f-83ee-512d12284d3c" }
+      ) {
+        buttonText
+        forSaasersText
+        loginText
+        pricingText
+        logo {
           fixed(width: 135) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyContentfulFixed
           }
         }
       }
@@ -40,7 +46,7 @@ const Header = () => {
           <Col>
             <Navbar expand="md">
               <NavbarBrand className="logo" tag={Link} to={"/"}>
-                <Img alt="logo" fixed={Images.Logo.childImageSharp.fixed} />
+                <Img alt="logo" fixed={data.headerContent.logo.fixed} />
               </NavbarBrand>
               <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
                 <CgMenuCheese />
@@ -53,12 +59,14 @@ const Header = () => {
                   <FaTimes />
                 </div>
                 <Nav>
-                  <Nav.Link to="/">for saasers</Nav.Link>
-                  <Nav.Link to="/">pricing</Nav.Link>
-                  <Nav.Link to="/">login</Nav.Link>
+                  <Nav.Link to="/">
+                    {data.headerContent.forSaasersText}
+                  </Nav.Link>
+                  <Nav.Link to="/">{data.headerContent.pricingText}</Nav.Link>
+                  <Nav.Link to="/">{data.headerContent.loginText}</Nav.Link>
                 </Nav>
                 <Link to="/" className="btn-dark-blue">
-                  Request Demo
+                  {data.headerContent.buttonText}
                 </Link>
               </Navbar>
             </Navbar>

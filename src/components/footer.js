@@ -53,8 +53,8 @@ const Footer = () => {
             </Col>
             <Col className="footer-bottom__right">
               <div className="footer-bottom__social-icons">
-                {data.socialIcons.edges.map(sl => (
-                  <a href={sl.node.url} target="_blank">
+                {data.socialIcons.edges.map((sl, index) => (
+                  <a key={index} href={sl.node.url} target="_blank">
                     {sl.node.name === "Facebook" ? <FaFacebookF /> : ""}
                     {sl.node.name === "Twitter" ? <FaTwitter /> : ""}
                     {sl.node.name === "LinkedIn" ? <FaLinkedinIn /> : ""}
