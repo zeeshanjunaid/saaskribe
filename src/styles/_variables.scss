@@ -9,18 +9,11 @@ $color-white: #ffffff;
 
 //FONTS
 @font-face {
-  font-family: "Myriad Pro Regular";
+  font-family: "Myriad Pro";
   font-style: normal;
   font-weight: normal;
   src: local("Myriad Pro Regular"),
     url("../fonts/MYRIADPRO-REGULAR.woff") format("woff");
 }
-@font-face {
-  font-family: "Myriad Pro Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Myriad Pro Bold"),
-    url("../fonts/MYRIADPRO-BOLD.woff") format("woff");
-}
-$font-body: "Myriad Pro Regular", sans-serif;
-$font-heading: "Myriad Pro Regular", sans-serif;
+$font-body: "Myriad Pro", sans-serif;
+$font-heading: "Myriad Pro", sans-serif;

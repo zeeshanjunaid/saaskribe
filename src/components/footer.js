@@ -16,8 +16,16 @@ const Footer = () => {
         copyrightText
         heading
         logo {
-          fluid(sizes: "350", toFormat: WEBP) {
+          fluid(sizes: "350") {
             ...GatsbyContentfulFluid
+          }
+        }
+      }
+      socialIcons: allContentfulSocialLinks {
+        edges {
+          node {
+            name
+            url
           }
         }
       }
@@ -45,15 +53,13 @@ const Footer = () => {
             </Col>
             <Col className="footer-bottom__right">
               <div className="footer-bottom__social-icons">
-                <a href="#" target="_blank">
-                  <FaFacebookF />
-                </a>
-                <a href="#" target="_blank">
-                  <FaTwitter />
-                </a>
-                <a href="#" target="_blank">
-                  <FaLinkedinIn />
-                </a>
+                {data.socialIcons.edges.map(sl => (
+                  <a href={sl.node.url} target="_blank">
+                    {sl.node.name === "Facebook" ? <FaFacebookF /> : ""}
+                    {sl.node.name === "Twitter" ? <FaTwitter /> : ""}
+                    {sl.node.name === "LinkedIn" ? <FaLinkedinIn /> : ""}
+                  </a>
+                ))}
               </div>
               <div className="footer-bottom__menu">
                 <ul>

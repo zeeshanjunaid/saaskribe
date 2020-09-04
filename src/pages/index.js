@@ -20,7 +20,7 @@ const IndexPage = () => {
             paragraph
             reverse
             image {
-              fluid(maxWidth: 350, toFormat: WEBP) {
+              fluid(maxWidth: 350) {
                 ...GatsbyContentfulFluid
               }
             }
@@ -31,7 +31,7 @@ const IndexPage = () => {
         edges {
           node {
             logo {
-              fluid(toFormat: WEBP) {
+              fluid {
                 ...GatsbyContentfulFluid
               }
             }
@@ -44,7 +44,7 @@ const IndexPage = () => {
         sectionid
         title
         heroImage {
-          fluid(toFormat: WEBP) {
+          fluid {
             ...GatsbyContentfulFluid
           }
         }
@@ -52,7 +52,7 @@ const IndexPage = () => {
       contentfulAboutSection(sectionId: { eq: 1 }) {
         title
         sectionimage {
-          fluid(toFormat: WEBP) {
+          fluid {
             ...GatsbyContentfulFluid
           }
         }
