@@ -45,7 +45,7 @@ const IndexPage = () => {
         title
         heroImage {
           fluid {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_tracedSVG
           }
         }
       }
