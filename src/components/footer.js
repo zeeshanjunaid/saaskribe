@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
+import CountUp from "react-countup"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -36,7 +37,12 @@ const Footer = () => {
       <Container>
         <Row className="align-items-center justify-content-center">
           <Col className="col-top" md={8} sm>
+            <div class="footer__counter">
+              <CountUp end={50000} />
+              <span>+</span>
+            </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
+
             <Link className="gradient-btn-2" to="/">
               {data.footerContent.buttonText}
             </Link>

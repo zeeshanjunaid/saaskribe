@@ -1,6 +1,17 @@
 .footer {
   background-color: $color-blue-dark;
   padding: 6.7rem 0 0 0;
+
+  &__counter {
+    text-align: center;
+    color: $color-white;
+    font-size: 10rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    background: linear-gradient(120deg, $color-sky-dark, $color-sky-light);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .col-top {
     text-align: center;
     .main-heading {
