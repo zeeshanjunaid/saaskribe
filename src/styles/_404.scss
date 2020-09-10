@@ -1,0 +1,39 @@
+.notfound {
+  background-size: 60% !important;
+  background-repeat: no-repeat;
+  background-position: right top !important;
+  @media (max-width: 767px) {
+    padding: 20rem 0 6rem 0;
+  }
+  .row {
+    height: 90vh;
+    @media (max-width: 767px) {
+      height: 100%;
+    }
+  }
+  &__img-container {
+    img {
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      order: -1;
+    }
+  }
+  &__text-container {
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+  h2 {
+    font-weight: 700;
+    font-family: $font-heading;
+    font-size: 5.2rem;
+    color: $color-blue-dark;
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-blue-light;
+  }
+}
