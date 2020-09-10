@@ -57,11 +57,15 @@ const Header = () => {
                   <FaTimes />
                 </div>
                 <Nav>
-                  <Nav.Link to="/">
+                  <Link className="nav-link" to="/saasers">
                     {data.headerContent.forSaasersText}
-                  </Nav.Link>
-                  <Nav.Link to="/">{data.headerContent.pricingText}</Nav.Link>
-                  <Nav.Link to="/">{data.headerContent.loginText}</Nav.Link>
+                  </Link>
+                  <Link className="nav-link" to="/pricing">
+                    {data.headerContent.pricingText}
+                  </Link>
+                  <Link className="nav-link" to="/login">
+                    {data.headerContent.loginText}
+                  </Link>
                 </Nav>
                 <Link to="/" className="btn-dark-blue">
                   {data.headerContent.buttonText}

@@ -1,9 +1,11 @@
 .gradient-btn-1 {
+  background-color: $color-orange-dark;
   background-image: linear-gradient(
     to right,
     $color-orange-light,
     $color-orange-dark
   );
+  position: relative;
   font-size: 1.4rem;
   color: $color-white;
   padding: 1.3rem 3.3rem;
@@ -16,9 +18,18 @@
   display: inline-block;
   border-radius: 0.3rem;
   line-height: 1.6;
+  background-size: 200% auto;
+  transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
     color: $color-white;
+    background-image: linear-gradient(
+      120deg,
+      $color-orange-light 0%,
+      $color-orange-dark 45%,
+      $color-orange-light 100%
+    );
+    background-position: right center;
   }
 }
 .gradient-btn-2 {
@@ -39,9 +50,18 @@
   display: inline-block;
   border-radius: 0.3rem;
   line-height: 1.6;
+  background-size: 200% auto;
+  transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
     color: $color-white;
+    background-image: linear-gradient(
+      120deg,
+      $color-sky-light 0%,
+      $color-sky-dark 45%,
+      $color-sky-light 100%
+    );
+    background-position: right center;
   }
 }
 .btn-dark-blue {
@@ -57,9 +77,18 @@
   display: inline-block;
   border-radius: 0.3rem;
   margin-left: 2rem;
+  background-size: 200% auto;
+  transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   &:hover {
     color: $color-white;
+    background-image: linear-gradient(
+      120deg,
+      $color-blue-dark 0%,
+      $color-blue-light 45%,
+      $color-blue-dark 100%
+    );
+    background-position: right center;
   }
 }
 

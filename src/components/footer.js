@@ -61,7 +61,12 @@ const Footer = () => {
             <Col className="footer-bottom__right">
               <div className="footer-bottom__social-icons">
                 {data.socialIcons.edges.map((sl, index) => (
-                  <a key={index} href={sl.node.url} target="_blank">
+                  <a
+                    key={index}
+                    href={sl.node.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {sl.node.name === "Facebook" ? <FaFacebookF /> : ""}
                     {sl.node.name === "Twitter" ? <FaTwitter /> : ""}
                     {sl.node.name === "LinkedIn" ? <FaLinkedinIn /> : ""}
@@ -71,16 +76,16 @@ const Footer = () => {
               <div className="footer-bottom__menu">
                 <ul>
                   <li>
-                    <Link to="/">For Saasers</Link>
+                    <Link to="/saasers">For Saasers</Link>
                   </li>
                   <li>
-                    <Link to="/">Pricing</Link>
+                    <Link to="/pricing">Pricing</Link>
                   </li>
                   <li>
-                    <Link to="/">About</Link>
+                    <Link to="/about">About</Link>
                   </li>
                   <li>
-                    <Link to="/">FAQs</Link>
+                    <Link to="/faqs">FAQs</Link>
                   </li>
                 </ul>
               </div>
