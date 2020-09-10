@@ -9,7 +9,7 @@ import CountUp from "react-countup"
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      footerContent: contentfulFooterContent(
+      footerContent: contentfulFooter(
         id: { eq: "8e156a76-0188-545b-b161-df5652d66c0f" }
       ) {
         id
@@ -22,7 +22,7 @@ const Footer = () => {
           }
         }
       }
-      socialIcons: allContentfulSocialLinks {
+      socialIcons: allContentfulSocialMediaExternal {
         edges {
           node {
             name

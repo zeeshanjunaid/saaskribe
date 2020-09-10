@@ -1,28 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Row, Col, Container } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
 
 const Hero = ({ title, paragraph, buttonText, heroImage }) => {
-  const HeroImages = useStaticQuery(graphql`
-    query {
-      heroBg: file(relativePath: { eq: "top-background.png" }) {
-        childImageSharp {
-          fluid(quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
   return (
-    <BackgroundImage
-      Tag="div"
-      fluid={HeroImages.heroBg.childImageSharp.fluid}
-      className="hero"
-    >
+    <div className="hero">
       <Container>
         <Row className="align-items-center">
           <Col md sm={12} className="hero__text-container">
@@ -37,7 +20,7 @@ const Hero = ({ title, paragraph, buttonText, heroImage }) => {
           </Col>
         </Row>
       </Container>
-    </BackgroundImage>
+    </div>
   )
 }
 

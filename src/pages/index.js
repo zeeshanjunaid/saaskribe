@@ -12,7 +12,7 @@ import Logos from "../components/Home/logos"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulTwoCols(sort: { fields: createdAt, order: ASC }) {
+      allContentfulTwoCols: allContentfulProductFeatures(sort: { fields: createdAt, order: ASC }) {
         edges {
           node {
             id
@@ -27,7 +27,7 @@ const IndexPage = () => {
           }
         }
       }
-      allContentfulClientsLogos {
+      allContentfulClientsLogos: allContentfulCurrentCustomerLogos {
         edges {
           node {
             logo {
@@ -38,10 +38,11 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulHeroSection(sectionid: { eq: 1 }) {
+      contentfulHeroSection: contentfulSaaSKribeHome(
+        id: { eq: "f89e01c1-02f5-569a-9502-5e3b1fde1f74" }
+      ) {
         buttonText
         paragraph
-        sectionid
         title
         heroImage {
           fluid {
@@ -49,7 +50,9 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulAboutSection(sectionId: { eq: 1 }) {
+      contentfulAboutSection: contentfulSolutionDashboardWhySaaSKribe(
+        id: { eq: "b7100798-58bf-51f0-be07-1318e8132d22" }
+      ) {
         title
         sectionimage {
           fluid {
@@ -57,10 +60,10 @@ const IndexPage = () => {
           }
         }
       }
-      TwoColumnTitle: contentfulHeading(sectionName: { eq: "TwoColumnTitle" }) {
+      TwoColumnTitle: contentfulSectionTitles(id: { eq: "e4cb4a6f-adbb-5203-98e8-3da41e0efce4" }) {
         title
       }
-      ClientsTitle: contentfulHeading(sectionName: { eq: "ClientsTitle" }) {
+      ClientsTitle: contentfulSectionTitles(id: { eq: "6c832d8c-30d6-50d2-a73b-8adc0ce4b187" }) {
         title
       }
     }
