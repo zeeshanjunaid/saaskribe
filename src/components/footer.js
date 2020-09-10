@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 import Counter from "react-number-counter"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -42,20 +43,33 @@ const Footer = () => {
             </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
 
-            <Link className="gradient-btn-2" to="/">
+            <AniLink
+              fade
+              entry={{
+                delay: 0.6,
+              }}
+              className="gradient-btn-2"
+              to="/"
+            >
               {data.footerContent.buttonText}
-            </Link>
+            </AniLink>
           </Col>
         </Row>
         <div className="footer-bottom">
           <Row>
             <Col>
-              <Link to="/">
+              <AniLink
+                fade
+                entry={{
+                  delay: 0.6,
+                }}
+                to="/"
+              >
                 <img
                   className="footer-bottom__logo"
                   src={data.footerContent.logo.file.url}
                 />
-              </Link>
+              </AniLink>
               <p className="copyright">{data.footerContent.copyrightText}</p>
             </Col>
             <Col className="footer-bottom__right">
@@ -76,16 +90,48 @@ const Footer = () => {
               <div className="footer-bottom__menu">
                 <ul>
                   <li>
-                    <Link to="/saasers">For Saasers</Link>
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 0.6,
+                      }}
+                      to="saasers"
+                    >
+                      For Saasers
+                    </AniLink>
                   </li>
                   <li>
-                    <Link to="/pricing">Pricing</Link>
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 0.6,
+                      }}
+                      to="pricing"
+                    >
+                      Pricing
+                    </AniLink>
                   </li>
                   <li>
-                    <Link to="/about">About</Link>
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 0.6,
+                      }}
+                      to="about"
+                    >
+                      About
+                    </AniLink>
                   </li>
                   <li>
-                    <Link to="/faqs">FAQs</Link>
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 0.6,
+                      }}
+                      to="faqs"
+                    >
+                      FAQs
+                    </AniLink>
                   </li>
                 </ul>
               </div>
