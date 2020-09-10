@@ -46,7 +46,7 @@ const Header = () => {
             <Navbar expand="md">
               <AniLink
                 entry={{
-                  delay: 1,
+                  delay: 0.6,
                 }}
                 fade
                 className="logo navbar-brand"
@@ -67,7 +67,7 @@ const Header = () => {
                 <Nav>
                   <AniLink
                     entry={{
-                      delay: 1,
+                      delay: 0.6,
                     }}
                     fade
                     className="nav-link"
@@ -77,7 +77,7 @@ const Header = () => {
                   </AniLink>
                   <AniLink
                     entry={{
-                      delay: 1,
+                      delay: 0.6,
                     }}
                     fade
                     className="nav-link"
@@ -87,7 +87,7 @@ const Header = () => {
                   </AniLink>
                   <AniLink
                     entry={{
-                      delay: 1,
+                      delay: 0.6,
                     }}
                     fade
                     className="nav-link"
@@ -98,7 +98,7 @@ const Header = () => {
                 </Nav>
                 <AniLink
                   entry={{
-                    delay: 1,
+                    delay: 0.6,
                   }}
                   fade
                   to="/demo"

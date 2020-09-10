@@ -38,7 +38,7 @@ const Footer = () => {
         <Row className="align-items-center justify-content-center">
           <Col className="col-top" md={8} sm>
             <div class="footer__counter">
-              <Counter start={0} end={50000} delay={1} />
+              <Counter start={0} end={50000} delay={0.6} />
               <span>+</span>
             </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
@@ -46,7 +46,7 @@ const Footer = () => {
             <AniLink
               fade
               entry={{
-                delay: 1,
+                delay: 0.6,
               }}
               className="gradient-btn-2"
               to="/"
@@ -61,7 +61,7 @@ const Footer = () => {
               <AniLink
                 fade
                 entry={{
-                  delay: 1,
+                  delay: 0.6,
                 }}
                 to="/"
               >
@@ -93,7 +93,7 @@ const Footer = () => {
                     <AniLink
                       fade
                       entry={{
-                        delay: 1,
+                        delay: 0.6,
                       }}
                       to="saasers"
                     >
@@ -104,7 +104,7 @@ const Footer = () => {
                     <AniLink
                       fade
                       entry={{
-                        delay: 1,
+                        delay: 0.6,
                       }}
                       to="pricing"
                     >
@@ -115,7 +115,7 @@ const Footer = () => {
                     <AniLink
                       fade
                       entry={{
-                        delay: 1,
+                        delay: 0.6,
                       }}
                       to="about"
                     >
@@ -126,7 +126,7 @@ const Footer = () => {
                     <AniLink
                       fade
                       entry={{
-                        delay: 1,
+                        delay: 0.6,
                       }}
                       to="faqs"
                     >
