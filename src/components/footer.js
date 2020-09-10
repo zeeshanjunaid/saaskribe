@@ -43,7 +43,14 @@ const Footer = () => {
             </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
 
-            <AniLink fade className="gradient-btn-2" to="/">
+            <AniLink
+              fade
+              entry={{
+                delay: 1,
+              }}
+              className="gradient-btn-2"
+              to="/"
+            >
               {data.footerContent.buttonText}
             </AniLink>
           </Col>
@@ -51,7 +58,13 @@ const Footer = () => {
         <div className="footer-bottom">
           <Row>
             <Col>
-              <AniLink fade to="/">
+              <AniLink
+                fade
+                entry={{
+                  delay: 1,
+                }}
+                to="/"
+              >
                 <img
                   className="footer-bottom__logo"
                   src={data.footerContent.logo.file.url}
@@ -77,22 +90,46 @@ const Footer = () => {
               <div className="footer-bottom__menu">
                 <ul>
                   <li>
-                    <AniLink fade to="saasers">
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 1,
+                      }}
+                      to="saasers"
+                    >
                       For Saasers
                     </AniLink>
                   </li>
                   <li>
-                    <AniLink fade to="pricing">
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 1,
+                      }}
+                      to="pricing"
+                    >
                       Pricing
                     </AniLink>
                   </li>
                   <li>
-                    <AniLink fade to="about">
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 1,
+                      }}
+                      to="about"
+                    >
                       About
                     </AniLink>
                   </li>
                   <li>
-                    <AniLink fade to="faqs">
+                    <AniLink
+                      fade
+                      entry={{
+                        delay: 1,
+                      }}
+                      to="faqs"
+                    >
                       FAQs
                     </AniLink>
                   </li>
