@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { Row, Col, Navbar, NavbarBrand, Nav, Container } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { CgMenuCheese } from "react-icons/cg"
-import { FaTimes } from "react-icons/fa"
+import { FaTimes, FaBars } from "react-icons/fa"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -18,8 +16,8 @@ const Header = () => {
         loginText
         pricingText
         logo {
-          fixed(width: 135) {
-            ...GatsbyContentfulFixed
+          file {
+            url
           }
         }
       }
@@ -45,11 +43,11 @@ const Header = () => {
         <Row>
           <Col>
             <Navbar expand="md">
-              <NavbarBrand className="logo" tag={Link} to={"/"}>
-                <Img alt="logo" fixed={data.headerContent.logo.fixed} />
-              </NavbarBrand>
+              <Link className="logo navbar-brand" tag={Link} to="/">
+                <img alt="logo" src={data.headerContent.logo.file.url} />
+              </Link>
               <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
-                <CgMenuCheese />
+                <FaBars />
               </div>
               <Navbar
                 className={`sub-menu-bar ${menuOpen && "showMenu"}`}

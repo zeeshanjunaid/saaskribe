@@ -11,6 +11,14 @@
     position: relative;
     transition: all 0.3s ease-out 0s;
     justify-content: space-between;
+    .logo {
+      width: 15rem;
+      height: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .nav-link {
       color: $color-blue-dark;
       font-size: 1.4rem;

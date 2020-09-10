@@ -1,10 +1,9 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
-import CountUp from "react-countup"
+import Counter from "react-number-counter"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -17,8 +16,8 @@ const Footer = () => {
         copyrightText
         heading
         logo {
-          fluid(sizes: "350") {
-            ...GatsbyContentfulFluid
+          file {
+            url
           }
         }
       }
@@ -38,7 +37,7 @@ const Footer = () => {
         <Row className="align-items-center justify-content-center">
           <Col className="col-top" md={8} sm>
             <div class="footer__counter">
-              <CountUp end={50000} />
+              <Counter start={0} end={50000} delay={1} />
               <span>+</span>
             </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
@@ -51,10 +50,12 @@ const Footer = () => {
         <div className="footer-bottom">
           <Row>
             <Col>
-              <Img
-                className="footer-bottom__logo"
-                fluid={data.footerContent.logo.fluid}
-              />
+              <Link to="/">
+                <img
+                  className="footer-bottom__logo"
+                  src={data.footerContent.logo.file.url}
+                />
+              </Link>
               <p className="copyright">{data.footerContent.copyrightText}</p>
             </Col>
             <Col className="footer-bottom__right">

@@ -12,7 +12,9 @@ import Logos from "../components/Home/logos"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulTwoCols: allContentfulProductFeatures(sort: { fields: createdAt, order: ASC }) {
+      allContentfulTwoCols: allContentfulProductFeatures(
+        sort: { fields: createdAt, order: ASC }
+      ) {
         edges {
           node {
             id
@@ -45,8 +47,8 @@ const IndexPage = () => {
         paragraph
         title
         heroImage {
-          fluid {
-            ...GatsbyContentfulFluid_tracedSVG
+          file {
+            url
           }
         }
       }
@@ -60,10 +62,14 @@ const IndexPage = () => {
           }
         }
       }
-      TwoColumnTitle: contentfulSectionTitles(id: { eq: "e4cb4a6f-adbb-5203-98e8-3da41e0efce4" }) {
+      TwoColumnTitle: contentfulSectionTitles(
+        id: { eq: "e4cb4a6f-adbb-5203-98e8-3da41e0efce4" }
+      ) {
         title
       }
-      ClientsTitle: contentfulSectionTitles(id: { eq: "6c832d8c-30d6-50d2-a73b-8adc0ce4b187" }) {
+      ClientsTitle: contentfulSectionTitles(
+        id: { eq: "6c832d8c-30d6-50d2-a73b-8adc0ce4b187" }
+      ) {
         title
       }
     }
@@ -74,7 +80,7 @@ const IndexPage = () => {
       <Hero
         title={data.contentfulHeroSection.title}
         paragraph={data.contentfulHeroSection.paragraph}
-        heroImage={data.contentfulHeroSection.heroImage.fluid}
+        heroImage={data.contentfulHeroSection.heroImage.file.url}
         buttonText={data.contentfulHeroSection.buttonText}
       />
       <About

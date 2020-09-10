@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Row, Col, Container } from "react-bootstrap"
-import Img from "gatsby-image"
 
 const Hero = ({ title, paragraph, buttonText, heroImage }) => {
   return (
@@ -16,7 +15,7 @@ const Hero = ({ title, paragraph, buttonText, heroImage }) => {
             </Link>
           </Col>
           <Col md sm={12} className="hero__img-container">
-            <Img fluid={heroImage} />
+            <img src={heroImage} />
           </Col>
         </Row>
       </Container>

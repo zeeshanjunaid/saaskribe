@@ -67,13 +67,11 @@
 }
 
 .logos {
-  .rec.rec-slider {
-    justify-content: center !important;
-    align-items: center !important;
-    display: flex !important;
-  }
-  .rec.rec-pagination {
+  button.react-multiple-carousel__arrow {
     display: none !important;
+  }
+  ul.react-multi-carousel-track {
+    align-items: center;
   }
   .gatsby-image-wrapper {
     max-width: 15rem;
