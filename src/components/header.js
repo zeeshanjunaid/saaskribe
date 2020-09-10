@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Row, Col, Navbar, NavbarBrand, Nav, Container } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaTimes, FaBars } from "react-icons/fa"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -43,9 +44,16 @@ const Header = () => {
         <Row>
           <Col>
             <Navbar expand="md">
-              <Link className="logo navbar-brand" tag={Link} to="/">
+              <AniLink
+                entry={{
+                  delay: 0.6,
+                }}
+                fade
+                className="logo navbar-brand"
+                to="/"
+              >
                 <img alt="logo" src={data.headerContent.logo.file.url} />
-              </Link>
+              </AniLink>
               <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
                 <FaBars />
               </div>
@@ -57,19 +65,47 @@ const Header = () => {
                   <FaTimes />
                 </div>
                 <Nav>
-                  <Link className="nav-link" to="/saasers">
+                  <AniLink
+                    entry={{
+                      delay: 0.6,
+                    }}
+                    fade
+                    className="nav-link"
+                    to="saasers"
+                  >
                     {data.headerContent.forSaasersText}
-                  </Link>
-                  <Link className="nav-link" to="/pricing">
+                  </AniLink>
+                  <AniLink
+                    entry={{
+                      delay: 0.6,
+                    }}
+                    fade
+                    className="nav-link"
+                    to="pricing"
+                  >
                     {data.headerContent.pricingText}
-                  </Link>
-                  <Link className="nav-link" to="/login">
+                  </AniLink>
+                  <AniLink
+                    entry={{
+                      delay: 0.6,
+                    }}
+                    fade
+                    className="nav-link"
+                    to="login"
+                  >
                     {data.headerContent.loginText}
-                  </Link>
+                  </AniLink>
                 </Nav>
-                <Link to="/" className="btn-dark-blue">
+                <AniLink
+                  entry={{
+                    delay: 0.6,
+                  }}
+                  fade
+                  to="/demo"
+                  className="btn-dark-blue"
+                >
                   {data.headerContent.buttonText}
-                </Link>
+                </AniLink>
               </Navbar>
             </Navbar>
           </Col>
