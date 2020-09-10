@@ -5,15 +5,28 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import "../styles/main.scss"
 import Footer from "./footer"
+import scrollTo from "gatsby-plugin-smoothscroll"
+import { FaChevronUp } from "react-icons/fa"
 
 const Layout = ({ children }) => {
+  const [scrolling, setScrolling] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setScrolling(true)
+      } else {
+        setScrolling(false)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+  }, [])
   const data = useStaticQuery(graphql`
     query {
       headerContent: contentfulHeader(
@@ -33,8 +46,14 @@ const Layout = ({ children }) => {
         <link rel="icon" href={data.headerContent.favicon.fluid.src} />
       </Helmet>
       <Header />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <Footer />
+      <button
+        className={`back ${scrolling && "show"}`}
+        onClick={() => scrollTo("#main")}
+      >
+        <FaChevronUp />
+      </button>
     </>
   )
 }

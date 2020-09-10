@@ -31,3 +31,37 @@ body {
   padding: 0 !important;
   margin: 0 auto !important;
 }
+
+.back {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  background: rgba($color-white, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0.1rem 0.5rem 0px;
+  transition: all 0.3s ease-out 0s;
+  border: 0px;
+  border-radius: 0.3rem;
+  outline: none;
+  display: none;
+  padding: 1.2rem 1.4rem;
+  cursor: pointer;
+  &.show {
+    display: block;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &:hover {
+    background: $color-blue-dark;
+    svg {
+      color: $color-white;
+    }
+  }
+  svg {
+    font-size: 1.6rem;
+    color: $color-blue-dark;
+    transition: all 0.3s ease-out 0s;
+  }
+}
