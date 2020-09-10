@@ -44,14 +44,7 @@ const Header = () => {
         <Row>
           <Col>
             <Navbar expand="md">
-              <AniLink
-                entry={{
-                  delay: 0.6,
-                }}
-                fade
-                className="logo navbar-brand"
-                to="/"
-              >
+              <AniLink fade className="logo navbar-brand" to="/">
                 <img alt="logo" src={data.headerContent.logo.file.url} />
               </AniLink>
               <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
@@ -65,45 +58,17 @@ const Header = () => {
                   <FaTimes />
                 </div>
                 <Nav>
-                  <AniLink
-                    entry={{
-                      delay: 0.6,
-                    }}
-                    fade
-                    className="nav-link"
-                    to="saasers"
-                  >
+                  <AniLink fade className="nav-link" to="saasers">
                     {data.headerContent.forSaasersText}
                   </AniLink>
-                  <AniLink
-                    entry={{
-                      delay: 0.6,
-                    }}
-                    fade
-                    className="nav-link"
-                    to="pricing"
-                  >
+                  <AniLink fade className="nav-link" to="pricing">
                     {data.headerContent.pricingText}
                   </AniLink>
-                  <AniLink
-                    entry={{
-                      delay: 0.6,
-                    }}
-                    fade
-                    className="nav-link"
-                    to="login"
-                  >
+                  <AniLink fade className="nav-link" to="login">
                     {data.headerContent.loginText}
                   </AniLink>
                 </Nav>
-                <AniLink
-                  entry={{
-                    delay: 0.6,
-                  }}
-                  fade
-                  to="/demo"
-                  className="btn-dark-blue"
-                >
+                <AniLink fade to="/demo" className="btn-dark-blue">
                   {data.headerContent.buttonText}
                 </AniLink>
               </Navbar>
