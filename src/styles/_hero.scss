@@ -14,7 +14,14 @@
   }
   &__img-container {
     img {
-      width: 100%;
+      width: 95%;
+      @media (min-width: 767px) {
+        margin-top: 10rem;
+        margin-left: -7rem;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 6rem;
+      }
     }
     @media (max-width: 767px) {
       order: -1;

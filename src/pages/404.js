@@ -10,6 +10,7 @@ const NotFoundPage = () => {
       contentful404Page(id: { eq: "97d673b9-870b-5c03-80e3-5d0f7c918329" }) {
         heading
         description
+        buttonText
         backgroundImage {
           file {
             url
@@ -33,7 +34,7 @@ const NotFoundPage = () => {
               <h2>{data.contentful404Page.heading}</h2>
               <p>{data.contentful404Page.description}</p>
               <Link to="/" className="gradient-btn-1">
-                Go back home
+                {data.contentful404Page.buttonText}
               </Link>
             </Col>
           </Row>
