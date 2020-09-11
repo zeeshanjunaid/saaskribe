@@ -6,14 +6,15 @@
   .right-curve {
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
     width: 35vw;
   }
   .left-curve {
-    left: -16rem;
+    left: -25rem;
+    transform: translateY(-50%);
   }
   .right-curve {
     right: -16rem;
+    transform: translateY(-80%);
   }
 
   .social-login {
