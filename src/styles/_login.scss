@@ -1,12 +1,15 @@
 .login {
   background-color: #f3f9ff;
-  height: 100vh;
+  min-height: 100vh;
 
   .left-curve,
   .right-curve {
     position: fixed;
     top: 50%;
     width: 35vw;
+    @media(max-width: 800px){
+        display: none;
+    }
   }
   .left-curve {
     left: -25rem;
