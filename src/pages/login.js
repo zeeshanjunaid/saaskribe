@@ -1,5 +1,6 @@
 import { Link, graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import SEO from "../components/seo"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 
@@ -32,6 +33,7 @@ const Login = () => {
   `)
   return (
     <div className="login">
+      <SEO title="Login" />
       <img
         className="left-curve"
         src={require("../images/login-leftcurve.svg")}

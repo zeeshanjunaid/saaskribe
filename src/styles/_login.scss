@@ -1,14 +1,13 @@
 .login {
   background-color: #f3f9ff;
-  min-height: 100vh;
 
   .left-curve,
   .right-curve {
     position: fixed;
     top: 50%;
     width: 35vw;
-    @media(max-width: 800px){
-        display: none;
+    @media (max-width: 800px) {
+      display: none;
     }
   }
   .left-curve {
@@ -65,7 +64,7 @@
     }
   }
   .row {
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     text-align: center;
   }
@@ -92,6 +91,9 @@
 
     label {
       font-size: 1.4rem;
+    }
+    .form-group {
+      width: calc(100% - 1rem);
     }
     .fp {
       margin-top: 1rem;
@@ -126,7 +128,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       a {
         &:not(:last-child) {
           margin-right: 2rem;
