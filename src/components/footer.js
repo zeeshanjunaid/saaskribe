@@ -1,6 +1,5 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 import Counter from "react-number-counter"
@@ -16,6 +15,9 @@ const Footer = () => {
         buttonText
         copyrightText
         heading
+        counterEnd
+        counterSpeed
+        counterStart
         logo {
           file {
             url
@@ -38,7 +40,11 @@ const Footer = () => {
         <Row className="align-items-center justify-content-center">
           <Col className="col-top" md={8} sm>
             <div class="footer__counter">
-              <Counter start={0} end={50000} delay={0.6} />
+              <Counter
+                start={data.footerContent.counterStart}
+                end={data.footerContent.counterEnd}
+                delay={data.footerContent.counterSpeed}
+              />
               <span>+</span>
             </div>
             <h2 className="main-heading">{data.footerContent.heading}</h2>
