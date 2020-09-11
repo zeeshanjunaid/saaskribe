@@ -1,0 +1,137 @@
+.login {
+  background-color: #f3f9ff;
+  height: 100vh;
+
+  .left-curve,
+  .right-curve {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35vw;
+  }
+  .left-curve {
+    left: -16rem;
+  }
+  .right-curve {
+    right: -16rem;
+  }
+
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    a {
+      font-size: 1.4rem;
+      &:hover {
+        img {
+          transform: scale(0.8);
+        }
+      }
+    }
+    .gmail-btn {
+      background-color: #fff;
+      width: 100%;
+      color: #000;
+      padding: 1rem 0;
+      box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+      margin-bottom: 1rem;
+      &:hover {
+        text-decoration: none;
+      }
+      img {
+        margin-right: 1rem;
+        transition: all 0.3s;
+      }
+    }
+    .window-btn {
+      background-color: #0cb3ee;
+      width: 100%;
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+      &:hover {
+        text-decoration: none;
+      }
+      img {
+        margin-right: 1rem;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .row {
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+  }
+  .logo {
+    max-width: 25rem;
+  }
+  h2 {
+    font-size: 4rem;
+    margin-top: 4rem;
+    line-height: 1;
+  }
+  p {
+    font-size: 1.8rem;
+    color: #5b6a87;
+  }
+  &__form {
+    text-align: left;
+    .btn.btn-block {
+      padding: 0.8rem 0;
+    }
+    input {
+      font-size: 1.4rem;
+    }
+
+    label {
+      font-size: 1.4rem;
+    }
+    .fp {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      color: #41acf8;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .signup-text {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    color: #5b6a87;
+    a {
+      color: #41acf8;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 5rem;
+    .copyright-text {
+      font-size: 1.4rem;
+      color: #919eb7;
+    }
+
+    .ss {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      a {
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+        svg {
+          font-size: 2rem;
+          color: #0181f6;
+        }
+      }
+    }
+  }
+}
