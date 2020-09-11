@@ -15,7 +15,7 @@
     transform: translateY(-50%);
   }
   .right-curve {
-    right: -16rem;
+    right: -20rem;
     transform: translateY(-80%);
   }
 
@@ -83,17 +83,15 @@
   &__form {
     text-align: left;
     .btn.btn-block {
-      padding: 0.8rem 0;
+      padding: 1.2rem 0;
     }
     input {
       font-size: 1.4rem;
+      width: calc(100% - 1.75rem);
     }
 
     label {
       font-size: 1.4rem;
-    }
-    .form-group {
-      width: calc(100% - 1rem);
     }
     .fp {
       margin-top: 1rem;

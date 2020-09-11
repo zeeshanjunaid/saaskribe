@@ -35,10 +35,12 @@ const Login = () => {
     <div className="login">
       <SEO title="Login" />
       <img
+        alt="left-curve"
         className="left-curve"
         src={require("../images/login-leftcurve.svg")}
       />
       <img
+        alt="right-curve"
         className="right-curve"
         src={require("../images/login-rightcurve.svg")}
       />
@@ -46,7 +48,11 @@ const Login = () => {
         <Row className="align-items-center jusitfy-content-center">
           <Col md={4} sm={6} xs={10}>
             <Link to="/">
-              <img className="logo" src={headerContent.logo.file.url} />
+              <img
+                alt="logo"
+                className="logo"
+                src={headerContent.logo.file.url}
+              />
             </Link>
             <h2>Welcome Back</h2>
             <p>Enter your details below</p>
@@ -73,11 +79,11 @@ const Login = () => {
             </div>
             <div className="social-login">
               <a className="gmail-btn" href="/">
-                <img src={require("../images/google.png")} />
+                <img alt="google" src={require("../images/google.png")} />
                 Login with Gmail
               </a>
               <a className="window-btn" href="/">
-                <img src={require("../images/microsoft.png")} />
+                <img alt="microsoft" src={require("../images/microsoft.png")} />
                 Login with Microsoft
               </a>
             </div>
