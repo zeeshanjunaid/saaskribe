@@ -5,8 +5,34 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 
 const Login = () => {
-  const { headerContent, socialIcons, footerContent } = useStaticQuery(graphql`
+  const {
+    headerContent,
+    socialIcons,
+    footerContent,
+    loginContent,
+  } = useStaticQuery(graphql`
     query {
+      loginContent: contentfulLoginPage(
+        id: { eq: "6e0449a0-cf0d-5d8e-bc48-64958920e501" }
+      ) {
+        loginWithGoogle
+        loginWithMicrosoft
+        emailLabel
+        passwordLabel
+        signInButton
+        subHeading
+        heading
+        leftImage {
+          file {
+            url
+          }
+        }
+        rightImage {
+          file {
+            url
+          }
+        }
+      }
       headerContent: contentfulHeader(
         id: { eq: "bd4009d2-c1ff-5e7f-83ee-512d12284d3c" }
       ) {
@@ -37,12 +63,12 @@ const Login = () => {
       <img
         alt="left-curve"
         className="left-curve"
-        src={require("../images/login-leftcurve.svg")}
+        src={loginContent.leftImage.file.url}
       />
       <img
         alt="right-curve"
         className="right-curve"
-        src={require("../images/login-rightcurve.svg")}
+        src={loginContent.rightImage.file.url}
       />
       <Container>
         <Row className="align-items-center jusitfy-content-center">
@@ -54,15 +80,15 @@ const Login = () => {
                 src={headerContent.logo.file.url}
               />
             </Link>
-            <h2>Welcome Back</h2>
-            <p>Enter your details below</p>
+            <h2>{loginContent.heading}</h2>
+            <p>{loginContent.subHeading}</p>
             <Form className="login__form">
               <Form.Group controlId="formGroupEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>{loginContent.emailLabel}</Form.Label>
                 <Form.Control type="email" />
               </Form.Group>
               <Form.Group controlId="formGroupPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>{loginContent.passwordLabel}</Form.Label>
                 <Form.Control type="password" />
               </Form.Group>
               <Form.Group>
@@ -71,21 +97,29 @@ const Login = () => {
                 </Link>
               </Form.Group>
               <Button className="gradient-btn-1" type="submit" block>
-                Sign in
+                {loginContent.signInButton}
               </Button>
             </Form>
             <div className="signup-text">
               Don't have an account? <Link to="/">Sign up</Link>
             </div>
             <div className="social-login">
-              <a className="gmail-btn" href="/">
-                <img alt="google" src={require("../images/google.png")} />
-                Login with Gmail
-              </a>
-              <a className="window-btn" href="/">
-                <img alt="microsoft" src={require("../images/microsoft.png")} />
-                Login with Microsoft
-              </a>
+              {loginContent.loginWithGoogle && (
+                <a className="gmail-btn" href="/">
+                  <img alt="google" src={require("../images/google.png")} />
+                  Login with Gmail
+                </a>
+              )}
+
+              {loginContent.loginWithMicrosoft && (
+                <a className="window-btn" href="/">
+                  <img
+                    alt="microsoft"
+                    src={require("../images/microsoft.png")}
+                  />
+                  Login with Microsoft
+                </a>
+              )}
             </div>
             <div className="login__footer">
               <div className="ss">
