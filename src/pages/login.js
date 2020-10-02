@@ -20,6 +20,10 @@ const Login = () => {
         emailLabel
         passwordLabel
         signInButton
+        forgetPasswordText
+        dontHaveAnAccountText
+        dontHaveAnAccount
+        signUpButtonText
         subHeading
         heading
         leftImage {
@@ -93,16 +97,20 @@ const Login = () => {
               </Form.Group>
               <Form.Group>
                 <Link className="fp" to="/">
-                  Forget password?
+                  {loginContent.forgetPasswordText}
                 </Link>
               </Form.Group>
               <Button className="gradient-btn-1" type="submit" block>
                 {loginContent.signInButton}
               </Button>
             </Form>
-            <div className="signup-text">
-              Don't have an account? <Link to="/">Sign up</Link>
-            </div>
+            {loginContent.dontHaveAnAccount && (
+              <div className="signup-text">
+                {loginContent.dontHaveAnAccountText}{" "}
+                <Link to="/">{loginContent.signUpButtonText}</Link>
+              </div>
+            )}
+
             <div className="social-login">
               {loginContent.loginWithGoogle && (
                 <a className="gmail-btn" href="/">

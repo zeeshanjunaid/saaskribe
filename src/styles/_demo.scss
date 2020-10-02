@@ -45,4 +45,50 @@
       }
     }
   }
+  &__form-container {
+    margin: 0 auto;
+    max-width: 35rem;
+    background-color: $color-white;
+    padding: 5.5rem 5rem;
+    margin-top: 2rem !important;
+    border-radius: 1.5rem;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 0 1.3rem 0 rgba(0, 0, 0, 0.2);
+    h2 {
+      font-size: 3rem;
+      color: $color-orange-dark;
+    }
+    form {
+      margin-top: 2rem;
+      label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      input,
+      textarea {
+        border: 0px;
+        font-size: 1.4rem;
+        padding-left: 0;
+        padding-right: 0;
+        border-bottom: 0.1rem solid #f0f0f0;
+        border-radius: 0;
+        &:focus {
+          outline: none !important;
+          box-shadow: none;
+        }
+      }
+      button {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      ::placeholder {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
