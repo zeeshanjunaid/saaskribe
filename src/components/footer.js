@@ -75,7 +75,7 @@ const Footer = () => {
                       entry={{
                         delay: 0.6,
                       }}
-                      to="saasers"
+                      to="/saasers"
                     >
                       For Saasers
                     </AniLink>
@@ -86,7 +86,7 @@ const Footer = () => {
                       entry={{
                         delay: 0.6,
                       }}
-                      to="pricing"
+                      to="/pricing"
                     >
                       Pricing
                     </AniLink>
@@ -97,7 +97,7 @@ const Footer = () => {
                       entry={{
                         delay: 0.6,
                       }}
-                      to="about"
+                      to="/about"
                     >
                       About
                     </AniLink>
@@ -108,7 +108,7 @@ const Footer = () => {
                       entry={{
                         delay: 0.6,
                       }}
-                      to="faqs"
+                      to="/faqs"
                     >
                       FAQs
                     </AniLink>

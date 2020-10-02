@@ -71,7 +71,7 @@ const Header = () => {
                     }}
                     fade
                     className="nav-link"
-                    to="saasers"
+                    to="/saasers"
                   >
                     {data.headerContent.forSaasersText}
                   </AniLink>
@@ -81,7 +81,7 @@ const Header = () => {
                     }}
                     fade
                     className="nav-link"
-                    to="pricing"
+                    to="/pricing"
                   >
                     {data.headerContent.pricingText}
                   </AniLink>
@@ -91,7 +91,7 @@ const Header = () => {
                     }}
                     fade
                     className="nav-link"
-                    to="login"
+                    to="/login"
                   >
                     {data.headerContent.loginText}
                   </AniLink>

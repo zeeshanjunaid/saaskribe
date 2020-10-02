@@ -1,10 +1,34 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"
 
 const Demo = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      demo: contentfulRequestDemoPage(
+        id: { eq: "a4110748-1029-580d-af2a-5a77e17a3909" }
+      ) {
+        id
+        phone
+        email
+        heading
+        address
+        subHeading
+        formTitle
+        nameLabel
+        namePlaceholder
+        emailLabel
+        emailPlaceholder
+        phoneLabel
+        phonePlaceholder
+        messageLabel
+        buttonText
+      }
+    }
+  `)
   return (
     <Layout>
       <SEO title="Request a Demo" />
@@ -12,15 +36,8 @@ const Demo = () => {
         <Container>
           <Row>
             <Col md={6} sm>
-              <h2 className="demo__title">
-                Start Growing With
-                <br />
-                SaasKribe Today
-              </h2>
-              <p className="demo__description">
-                Question about your account or want to know more about
-                Saaskribe? Complete the form and we’ll get back to you.
-              </p>
+              <h2 className="demo__title">{data.demo.heading}</h2>
+              <p className="demo__description">{data.demo.subHeading}</p>
               <div className="demo__contact-info">
                 <h3>Contact information</h3>
                 <ul>
@@ -28,23 +45,19 @@ const Demo = () => {
                     <span>
                       <FaMapMarkerAlt />
                     </span>
-                    <p>
-                      3000 Lawrence Street
-                      <br />
-                      Denver, CO 80205
-                    </p>
+                    <p>{data.demo.address}</p>
                   </li>
                   <li>
                     <span>
                       <FaEnvelope />
                     </span>
-                    <p>support@taskade.com</p>
+                    <p>{data.demo.email}</p>
                   </li>
                   <li>
                     <span>
                       <FaPhoneAlt />
                     </span>
-                    <p>(877) 788-0653</p>
+                    <p>{data.demo.phone}</p>
                   </li>
                 </ul>
               </div>
@@ -54,26 +67,32 @@ const Demo = () => {
                 <h2>Request a demo</h2>
                 <Form>
                   <Form.Group controlId="fullName">
-                    <Form.Label>Full Name</Form.Label>
-                    <Form.Control type="text" placeholder="John Smith" />
+                    <Form.Label>{data.demo.nameLabel}</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={data.demo.namePlaceholder}
+                    />
                   </Form.Group>
                   <Form.Group controlId="email">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>{data.demo.emailLabel}</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="john.smith@gmail.com"
+                      placeholder={data.demo.emailPlaceholder}
                     />
                   </Form.Group>
                   <Form.Group controlId="phone">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control type="text" placeholder="877-788-0653" />
+                    <Form.Label>{data.demo.phoneLabel}</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder={data.demo.phonePlaceholder}
+                    />
                   </Form.Group>
                   <Form.Group controlId="message">
-                    <Form.Label>Message</Form.Label>
+                    <Form.Label>{data.demo.messageLabel}</Form.Label>
                     <Form.Control as="textarea" rows={3} />
                   </Form.Group>
                   <Button className="gradient-btn-1" type="submit" block>
-                    Submit
+                    {data.demo.buttonText}
                   </Button>
                 </Form>
               </div>
