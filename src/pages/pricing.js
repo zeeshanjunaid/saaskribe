@@ -73,6 +73,7 @@ const Pricing = () => {
           paragraph={data.contentfulHeroSection.paragraph}
           heroImage={data.contentfulHeroSection.heroImage.file.url}
           buttonText={data.contentfulHeroSection.buttonText}
+          link={"/demo"}
         />
         <div className="pricing-page__packages">
           <Container>

@@ -82,6 +82,7 @@ const IndexPage = () => {
         paragraph={data.contentfulHeroSection.paragraph}
         heroImage={data.contentfulHeroSection.heroImage.file.url}
         buttonText={data.contentfulHeroSection.buttonText}
+        link={'/pricing'}
       />
       <About
         title={data.contentfulAboutSection.title}

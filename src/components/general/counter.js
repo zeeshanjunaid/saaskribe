@@ -38,7 +38,7 @@ const GeneralCounter = () => {
             delay: 0.6,
           }}
           className="gradient-btn-2"
-          to="/"
+          to="/pricing"
         >
           {data.footerContent.buttonText}
         </AniLink>
