@@ -65,11 +65,12 @@ const Demo = () => {
             <Col md={5} sm>
               <div className="demo__form-container">
                 <h2>Request a demo</h2>
-                <Form>
+                <Form name="demo" netlify>
                   <Form.Group controlId="fullName">
                     <Form.Label>{data.demo.nameLabel}</Form.Label>
                     <Form.Control
                       type="text"
+                      name="name"
                       placeholder={data.demo.namePlaceholder}
                     />
                   </Form.Group>
@@ -77,6 +78,7 @@ const Demo = () => {
                     <Form.Label>{data.demo.emailLabel}</Form.Label>
                     <Form.Control
                       type="email"
+                      name="email"
                       placeholder={data.demo.emailPlaceholder}
                     />
                   </Form.Group>
@@ -84,12 +86,13 @@ const Demo = () => {
                     <Form.Label>{data.demo.phoneLabel}</Form.Label>
                     <Form.Control
                       type="text"
+                      name="phone"
                       placeholder={data.demo.phonePlaceholder}
                     />
                   </Form.Group>
                   <Form.Group controlId="message">
                     <Form.Label>{data.demo.messageLabel}</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control name="message" as="textarea" rows={3} />
                   </Form.Group>
                   <Button className="gradient-btn-1" type="submit" block>
                     {data.demo.buttonText}

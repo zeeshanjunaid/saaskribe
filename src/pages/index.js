@@ -8,6 +8,7 @@ import Hero from "../components/Home/hero"
 import About from "../components/Home/about"
 import TwoCol from "../components/Home/twoCol"
 import Logos from "../components/Home/logos"
+import GeneralCounter from "../components/general/counter"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -82,7 +83,7 @@ const IndexPage = () => {
         paragraph={data.contentfulHeroSection.paragraph}
         heroImage={data.contentfulHeroSection.heroImage.file.url}
         buttonText={data.contentfulHeroSection.buttonText}
-        link={'/pricing'}
+        link={"/pricing"}
       />
       <About
         title={data.contentfulAboutSection.title}
@@ -110,6 +111,7 @@ const IndexPage = () => {
           logos={data.allContentfulClientsLogos.edges}
         />
       </div>
+      <GeneralCounter />
     </Layout>
   )
 }

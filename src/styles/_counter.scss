@@ -1,0 +1,28 @@
+.counter_div {
+  background-color: $color-blue-dark;
+
+  .row {
+    padding: 6.7rem 0;
+    border-bottom: 0.1rem solid rgba($color-white, 0.1);
+  }
+}
+.footer__counter {
+  text-align: center;
+  color: $color-white;
+  font-size: 10rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  background: linear-gradient(120deg, $color-sky-dark, $color-sky-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.col-top {
+  text-align: center;
+
+  .main-heading {
+    color: $color-white;
+    font-size: 3.2rem;
+    padding: 0 2rem;
+    line-height: 1.4;
+  }
+}

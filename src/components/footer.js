@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import GeneralCounter from "./general/counter"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -33,7 +32,6 @@ const Footer = () => {
   return (
     <div className="footer">
       <Container>
-        <GeneralCounter />
         <div className="footer-bottom">
           <Row>
             <Col>
