@@ -5,6 +5,12 @@
   background-position: right top !important;
   background-image: url("../images/hero-background.svg");
 
+  &_alerts {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
   &__title {
     font-size: 5.4rem;
     font-weight: bold;
