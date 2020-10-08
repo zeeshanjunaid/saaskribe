@@ -69,4 +69,44 @@
       }
     }
   }
+  &__features {
+    padding: 4rem 0;
+    .features-items {
+      list-style: none;
+      // list-style-image: url();
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      justify-items: start;
+      @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+      li {
+        font-size: 1.8rem;
+        color: #5b6a87;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+  &__faqs {
+    padding: 4rem 0;
+    .faq {
+      border-bottom: 0.1rem solid #f0f0f0;
+      padding: 3rem 0;
+      h2 {
+        font-weight: 600;
+        color: #5b6a87;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.6rem;
+        color: #5b6a87;
+      }
+    }
+  }
 }

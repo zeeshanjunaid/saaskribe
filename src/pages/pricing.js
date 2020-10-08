@@ -21,8 +21,35 @@ const Pricing = () => {
           }
         }
       }
+      features: allContentfulPricingPlansFeatures {
+        edges {
+          node {
+            feature
+          }
+        }
+      }
+      faqs: allContentfulFaqs {
+        edges {
+          node {
+            question
+            answer {
+              answer
+            }
+          }
+        }
+      }
       PricingTitle: contentfulSectionTitles(
         id: { eq: "80335c7b-aa03-57be-8fc2-350b7e310a82" }
+      ) {
+        title
+      }
+      PlansTitle: contentfulSectionTitles(
+        id: { eq: "649c21e8-0bf3-5918-a338-78328898450f" }
+      ) {
+        title
+      }
+      FaqsTitle: contentfulSectionTitles(
+        id: { eq: "9ac0d87f-4dfe-548c-a45b-1dbcef6b1483" }
       ) {
         title
       }
@@ -105,6 +132,41 @@ const Pricing = () => {
                 description={data.EssentialPackage.description.json}
               />
             </div>
+          </Container>
+        </div>
+        <div className="pricing-page__features">
+          <Container>
+            <Row className="mb-5">
+              <Col lg={12}>
+                <h2 className="main-heading">{data.PlansTitle.title}</h2>
+              </Col>
+            </Row>
+            <Row>
+              <ul className="features-items">
+                {data.features.edges.map((feature, index) => (
+                  <li key={index}>{feature.node.feature}</li>
+                ))}
+              </ul>
+            </Row>
+          </Container>
+        </div>
+        <div className="pricing-page__faqs">
+          <Container>
+            <Row className="mb-5">
+              <Col lg={12}>
+                <h2 className="main-heading">{data.FaqsTitle.title}</h2>
+              </Col>
+            </Row>
+            <Row>
+              <Col lg>
+                {data.faqs.edges.map((faq, index) => (
+                  <div className="faq" key={index}>
+                    <h2>{faq.node.question}</h2>
+                    <p>{faq.node.answer.answer}</p>
+                  </div>
+                ))}
+              </Col>
+            </Row>
           </Container>
         </div>
       </div>
