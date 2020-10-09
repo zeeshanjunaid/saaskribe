@@ -1,10 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
 const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -15,15 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           id
           title
-          updatedAt(formatString: "DD  MMMM, YYYY", locale: "en")
-          featureImage {
-            fluid {
-              src
-            }
-          }
-          childContentfulBlogPostsContentRichTextNode {
-            json
-          }
         }
       }
     }
@@ -40,10 +24,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: slug,
         id: post.id,
-        title: post.title,
-        content: post.childContentfulBlogPostsContentRichTextNode,
-        date: post.updatedAt,
-        featuredImg: post.featureImage,
       },
     })
   })

@@ -1,9 +1,11 @@
 import React from "react"
 import { Container, Row } from "react-bootstrap"
 import Layout from "../components/layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Hero from "../components/Home/hero"
+import SEO from "../components/seo"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Saasers = () => {
   const data = useStaticQuery(graphql`
@@ -42,6 +44,7 @@ const Saasers = () => {
   const featuredPostID = data.featuredPost.id
   return (
     <Layout>
+      <SEO title="Blog for Saasers" />
       <div className="blog">
         <div className="blog__featured-post">
           <Hero
@@ -67,7 +70,13 @@ const Saasers = () => {
                 } else {
                   return (
                     <div key={index} className="blog__post">
-                      <Link to={`/posts/${slug}`}>
+                      <AniLink
+                        fade
+                        entry={{
+                          delay: 0.6,
+                        }}
+                        to={`/posts/${slug}`}
+                      >
                         <div className="blog__post-img">
                           <Img fluid={post.node.featureImage.fluid} />
                         </div>
@@ -77,7 +86,7 @@ const Saasers = () => {
                         <div className="blog__post-title">
                           <h2>{post.node.title}</h2>
                         </div>
-                      </Link>
+                      </AniLink>
                     </div>
                   )
                 }
