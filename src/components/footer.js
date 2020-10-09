@@ -95,9 +95,9 @@ const Footer = () => {
                       entry={{
                         delay: 0.6,
                       }}
-                      to="/about"
+                      to="/demo"
                     >
-                      About
+                      Request Demo
                     </AniLink>
                   </li>
                   <li>

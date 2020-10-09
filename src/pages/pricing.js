@@ -142,15 +142,22 @@ const Pricing = () => {
               </Col>
             </Row>
             <Row>
-              <ul className="features-items">
-                {data.features.edges.map((feature, index) => (
-                  <li key={index}>{feature.node.feature}</li>
-                ))}
-              </ul>
+              <Col lg>
+                <ul className="features-items">
+                  {data.features.edges.map((feature, index) => (
+                    <li key={index}>
+                      <span>
+                        <img src="https://foxbox-direct.ch/default-wGlobal/wGlobal/layout/images/icons/arrow-e-1-128.png" />
+                      </span>
+                      {feature.node.feature}
+                    </li>
+                  ))}
+                </ul>
+              </Col>
             </Row>
           </Container>
         </div>
-        <div className="pricing-page__faqs">
+        <div id="faqs" className="pricing-page__faqs">
           <Container>
             <Row className="mb-5">
               <Col lg={12}>
@@ -162,7 +169,7 @@ const Pricing = () => {
                 {data.faqs.edges.map((faq, index) => (
                   <div className="faq" key={index}>
                     <h2>{faq.node.question}</h2>
-                    <p>{faq.node.answer.answer}</p>
+                    <div>{faq.node.answer.answer}</div>
                   </div>
                 ))}
               </Col>

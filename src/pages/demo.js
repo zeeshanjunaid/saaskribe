@@ -39,7 +39,7 @@ const Demo = () => {
             <Col md={6} sm>
               <h2 className="demo__title">{data.demo.heading}</h2>
               <p className="demo__description">{data.demo.subHeading}</p>
-              <div className="demo__contact-info">
+              <div className="demo__contact-info first">
                 <h3>Contact information</h3>
                 <ul>
                   <li>
@@ -76,6 +76,29 @@ const Demo = () => {
                   messageLabel={data.demo.messageLabel}
                   buttonText={data.demo.buttonText}
                 />
+              </div>
+              <div className="demo__contact-info last">
+                <h3>Contact information</h3>
+                <ul>
+                  <li>
+                    <span>
+                      <FaMapMarkerAlt />
+                    </span>
+                    <p>{data.demo.address}</p>
+                  </li>
+                  <li>
+                    <span>
+                      <FaEnvelope />
+                    </span>
+                    <p>{data.demo.email}</p>
+                  </li>
+                  <li>
+                    <span>
+                      <FaPhoneAlt />
+                    </span>
+                    <p>{data.demo.phone}</p>
+                  </li>
+                </ul>
               </div>
             </Col>
           </Row>
