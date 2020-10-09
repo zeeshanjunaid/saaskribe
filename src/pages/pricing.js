@@ -147,7 +147,10 @@ const Pricing = () => {
                   {data.features.edges.map((feature, index) => (
                     <li key={index}>
                       <span>
-                        <img src="https://foxbox-direct.ch/default-wGlobal/wGlobal/layout/images/icons/arrow-e-1-128.png" />
+                        <img
+                          alt="bullet icon"
+                          src="https://foxbox-direct.ch/default-wGlobal/wGlobal/layout/images/icons/arrow-e-1-128.png"
+                        />
                       </span>
                       {feature.node.feature}
                     </li>
