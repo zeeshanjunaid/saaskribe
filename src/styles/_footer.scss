@@ -8,6 +8,10 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     padding: 5.6rem 0;
+    @media (max-width: 767px) {
+      font-size: 2rem;
+      text-align: center;
+    }
 
     &__logo {
       max-width: 13.6rem;
@@ -16,6 +20,9 @@
       font-size: 1.4rem;
       color: $color-blue-light;
       margin-top: 2rem;
+      @media (max-width: 767px) {
+        font-size: 2rem;
+      }
     }
     &__social-icons {
       justify-content: flex-end;
@@ -23,14 +30,20 @@
       a {
         svg {
           font-size: 2.4rem;
+          @media (max-width: 767px) {
+            font-size: 3.2rem;
+          }
         }
       }
-      a:not(last-child) {
+      a:not(:last-child) {
         margin-right: 1.5rem;
       }
     }
     &__menu {
       margin-top: 2rem;
+      @media (max-width: 270px) {
+        display: none;
+      }
       ul {
         display: flex;
         justify-content: flex-end;
@@ -40,8 +53,11 @@
           color: $color-blue-light;
           text-decoration: none;
           font-weight: 500;
+          @media (max-width: 767px) {
+            font-size: 2rem;
+          }
         }
-        li:not(last-child) {
+        li:not(:last-child) {
           margin-right: 1rem;
         }
       }
@@ -51,6 +67,10 @@
       justify-content: flex-end;
       display: flex;
       flex-direction: column;
+      @media (max-width: 767px) {
+        align-items: center;
+        margin-top: 1rem;
+      }
     }
   }
 }

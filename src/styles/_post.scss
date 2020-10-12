@@ -6,10 +6,21 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 6rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      font-size: 4.2rem;
+    }
   }
   &__content {
     font-size: 2rem;
     padding: 6rem 6rem 0 6rem;
+    @media (max-width: 767px) {
+      padding: 4rem 0;
+    }
     p {
       color: #5b6a87;
       font-size: 2rem;

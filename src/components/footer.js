@@ -34,7 +34,7 @@ const Footer = () => {
       <Container>
         <div className="footer-bottom">
           <Row>
-            <Col>
+            <Col sm={12}>
               <AniLink
                 fade
                 entry={{
@@ -50,7 +50,7 @@ const Footer = () => {
               </AniLink>
               <p className="copyright">{data.footerContent.copyrightText}</p>
             </Col>
-            <Col className="footer-bottom__right">
+            <Col className="footer-bottom__right" sm={12}>
               <div className="footer-bottom__social-icons">
                 {data.socialIcons.edges.map((sl, index) => (
                   <a
