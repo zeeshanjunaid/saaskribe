@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Alert, Button, Form, Row } from "react-bootstrap"
+import { Alert, Button, Form } from "react-bootstrap"
 
 const encode = data => {
   return Object.keys(data)

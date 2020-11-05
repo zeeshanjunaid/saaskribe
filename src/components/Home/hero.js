@@ -23,7 +23,7 @@ const Hero = ({ title, paragraph, buttonText, heroImage, link, date }) => {
             </AniLink>
           </Col>
           <Col md sm={12} className="hero__img-container">
-            <img src={heroImage} />
+            <img alt="hero" src={heroImage} />
           </Col>
         </Row>
       </Container>

@@ -58,8 +58,8 @@ const IndexPage = () => {
       ) {
         title
         sectionimage {
-          fluid {
-            ...GatsbyContentfulFluid
+          file {
+            url
           }
         }
       }
@@ -87,7 +87,7 @@ const IndexPage = () => {
       />
       <About
         title={data.contentfulAboutSection.title}
-        sectionImage={data.contentfulAboutSection.sectionimage.fluid}
+        sectionImage={data.contentfulAboutSection.sectionimage.file.url}
       />
       <div className="twoCol">
         <Container>

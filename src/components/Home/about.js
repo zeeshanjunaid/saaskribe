@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 
 const About = ({ title, sectionImage }) => {
   return (
@@ -13,7 +13,8 @@ const About = ({ title, sectionImage }) => {
         </Row>
         <Row className="justify-content-center">
           <Col md={10} sm>
-            <Img fluid={sectionImage} />
+            {/* <Img fluid={sectionImage} /> */}
+            <img alt="Intro" src={sectionImage} />
           </Col>
         </Row>
       </Container>

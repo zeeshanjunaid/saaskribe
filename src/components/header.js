@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+
 import PropTypes from "prop-types"
-import { Row, Col, Navbar, NavbarBrand, Nav, Container } from "react-bootstrap"
+import { Row, Col, Navbar, Nav, Container } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaTimes, FaBars } from "react-icons/fa"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -54,14 +54,24 @@ const Header = () => {
               >
                 <img alt="logo" src={data.headerContent.logo.file.url} />
               </AniLink>
-              <div onClick={() => setMenuOpen(true)} className="hamburger-icon">
+              <div
+                role="button"
+                click={() => setMenuOpen(true)}
+                className="hamburger-icon"
+              >
                 <FaBars />
               </div>
               <Navbar
                 className={`sub-menu-bar ${menuOpen && "showMenu"}`}
                 navbar
               >
-                <div onClick={() => setMenuOpen(false)} className="cross-icon">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setMenuOpen(false)}
+                  onKeyDown={() => setMenuOpen(false)}
+                  className="cross-icon"
+                >
                   <FaTimes />
                 </div>
                 <Nav>
