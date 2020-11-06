@@ -56,7 +56,7 @@ const Header = () => {
               </AniLink>
               <div
                 role="button"
-                click={() => setMenuOpen(true)}
+                onClick={() => setMenuOpen(true)}
                 className="hamburger-icon"
               >
                 <FaBars />
